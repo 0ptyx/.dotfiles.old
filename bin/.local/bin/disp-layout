@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $1  == "docked" ]]; then
+    xrandr --output HDMI-2 --mode 3440x1440 --right-of eDP-1
+
+else
+    xrandr --output HDMI-2 --off
+
+fi
+
+# Reset backgound
+feh --bg-fill $HOME/.local/share/backgrounds/bg-img
