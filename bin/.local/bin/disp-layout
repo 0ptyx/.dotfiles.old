@@ -1,12 +1,26 @@
 #!/bin/bash
+declare -a MONITORS
+MONITORS=($(xrandr | grep " connected" | awk '{ print $1}'))
+num_monitors=${#MONITORS[*]}
 
-if [[ $1  == "docked" ]]; then
+switch_mobile() {
+    xrandr --output HDMI-0 --off --output eDP-1-1 --auto
+}
+
+switch_docked() {
     xrandr --output HDMI-0 --auto --scale 2x2 --output eDP-1-1 --auto --left-of HDMI-0
-
+}
+if [[ $1 == "mobile" ]]; then
+  switch_mobile
+elif [[ $1  == "docked" ]]; then
+  switch_docked
+# assume auto
 else
-    xrandr --output HDMI-0 --off
-
+  if [[ "$num_monitors" -eq "2" ]]; then
+    switch_docked
+  else
+    switch_mobile
+  fi
 fi
-
 # Reset backgound
 feh --bg-fill $HOME/.local/share/wallpapers/wallpaper
