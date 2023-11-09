@@ -68,26 +68,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-    zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/scripts/git-prompt.zsh
+#source /usr/share/zsh/scripts/git-prompt.zsh
 # User configuration
 brblack="%{${(%):-"%F{8}"}%}"
 
-PROMPT='%{$fg_bold[green]%}[${brblack}%1~%{$reset_color%}%{$fg_bold[green]%}]%{$reset_color%}$ '
-RPROMPT='$(git_prompt_info)  [%*]'
+PROMPT='%{$fg_bold[green]%}${brblack}%~%{$reset_color%}%{$fg_bold[green]%} λ%{$reset_color%} '
 #TMOUT=1
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-#TRAPALRM() {
-#    zle reset-prompt
-#}
-
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-12.0/lib64:$LD_LIBRARY_PATH"
