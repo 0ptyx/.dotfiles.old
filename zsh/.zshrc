@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 brblack="%{${(%):-"%F{8}"}%}"
 
-PROMPT='%{$fg_bold[green]%}${brblack}%~%{$reset_color%}%{$fg_bold[green]%} λ%{$reset_color%} '
+PROMPT='%{$fg_bold[green]%}${brblack}%~%{$reset_color%}%F{#21c7a8} λ%{$reset_color%} '
 #TMOUT=1
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}"
@@ -107,9 +107,10 @@ export LD_LIBRARY_PATH="/usr/local/cuda-12.0/lib64:$LD_LIBRARY_PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias e="nvim"
-alias l="ls"
-alias ll="ls -l"
-alias lll="ls -la"
+alias l="exa --icons"
+alias ls="exa --icons"
+alias ll="exa --icons -l"
+alias lll="exa --icons -la"
 bindkey -s '^f' 'tmux-sessionizer\n'
 
 export GPG_TTY=$(tty)

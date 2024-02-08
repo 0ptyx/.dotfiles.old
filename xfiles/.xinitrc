@@ -10,5 +10,5 @@ wireplumber &
 pipewire-pulse &
 feh --bg-fill ~/.local/share/wallpapers/wallpaper
 xrdb -merge ~/.Xresources
-disp-layout 
+disp-layout
 exec dbus-launch --sh-syntax --exit-with-session dwm
