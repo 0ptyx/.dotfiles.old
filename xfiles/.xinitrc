@@ -6,8 +6,6 @@ dunst &
 picom &
 slstatus &
 pipewire &
-wireplumber &
-pipewire-pulse &
 feh --bg-fill ~/.local/share/wallpapers/wallpaper
 xrdb -merge ~/.Xresources
 disp-layout

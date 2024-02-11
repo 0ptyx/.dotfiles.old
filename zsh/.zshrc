@@ -75,11 +75,11 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 brblack="%{${(%):-"%F{8}"}%}"
 
-PROMPT='%{$fg_bold[green]%}${brblack}%~%{$reset_color%}%F{#21c7a8} λ%{$reset_color%} '
+PROMPT='${brblack}%~%{$reset_color%}$(git_prompt_info) %F{#21c7a8}>%{$reset_color%} '
 #TMOUT=1
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
+ZSH_THEME_GIT_PROMPT_PREFIX=" (%F{#69a5c7}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 # export MANPATH="/usr/local/man:$MANPATH"
